@@ -3,11 +3,11 @@ Hooman[] human;
 void setup() {
   size(500, 500);
   //spawns the zombies and humans in; zombies with a greenish color and humans with a white color
-  zombie = new Hooman[2];
+  zombie = new Hooman[(int)(Math.random()*5)+1];
   for (int i = 0; i < zombie.length; i++) {
     zombie[i] = new Hooman(250,250,color(167, 169, 136),true);
   }
-  human = new Hooman[25];
+  human = new Hooman[(int)(Math.random()*11)+15];
   for (int i = 0; i < human.length; i++) {
     human[i] = new Hooman((int)(Math.random()*501),(int)(Math.random()*501),color(255),false);
   }
