@@ -74,16 +74,16 @@ class Hooman {
     }else {
       //if near out of bounds then direct towards in bounds
       if(myX <= 25){
-        myX = myX + (int)(Math.random()*20);
+        myX = myX + (int)(Math.random()*15);
       }
       if(myY <= 25){
-        myY = myY + (int)(Math.random()*20);
+        myY = myY + (int)(Math.random()*15);
       }
       if(myX >= 475){
-        myX = myX + (int)(Math.random()*20)-20;
+        myX = myX + (int)(Math.random()*15)-15;
       }
       if(myY >= 475){
-        myY = myY + (int)(Math.random()*20)-20;
+        myY = myY + (int)(Math.random()*15)-15;
       }
     }
   }
