@@ -7,7 +7,7 @@ void setup() {
   for (int i = 0; i < zombie.length; i++) {
     zombie[i] = new Hooman(250,250,color(167, 169, 136),true);
   }
-  human = new Hooman[(int)(Math.random()*11)+15];
+  human = new Hooman[(int)(Math.random()*16)+11];
   for (int i = 0; i < human.length; i++) {
     human[i] = new Hooman((int)(Math.random()*501),(int)(Math.random()*501),color(255),false);
   }
@@ -90,11 +90,11 @@ class Hooman {
 }
 void mouseClicked() {
   //resets
-  zombie = new Hooman[2];
+  zombie = new Hooman[(int)(Math.random()*5)+1];
   for (int i = 0; i < zombie.length; i++) {
     zombie[i] = new Hooman(250,250,color(167, 169, 136),true);
   }
-  human = new Hooman[25];
+  human = new Hooman[(int)(Math.random()*16)+11];
   for (int i = 0; i < human.length; i++) {
     human[i] = new Hooman((int)(Math.random()*501),(int)(Math.random()*501),color(255),false);
   }
