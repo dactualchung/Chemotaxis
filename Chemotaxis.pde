@@ -5,7 +5,7 @@ void setup() {
   //spawns the zombies and humans in; zombies with a greenish color and humans with a white color
   zombie = new Hooman[(int)(Math.random()*5)+1];
   for (int i = 0; i < zombie.length; i++) {
-    zombie[i] = new Hooman(250,250,color(167, 169, 136),true);
+    zombie[i] = new Hooman(250,250,color(149, 167, 146),true);
   }
   human = new Hooman[(int)(Math.random()*16)+11];
   for (int i = 0; i < human.length; i++) {
@@ -92,7 +92,7 @@ void mouseClicked() {
   //resets
   zombie = new Hooman[(int)(Math.random()*5)+1];
   for (int i = 0; i < zombie.length; i++) {
-    zombie[i] = new Hooman(250,250,color(167, 169, 136),true);
+    zombie[i] = new Hooman(250,250,color(149, 167, 146),true);
   }
   human = new Hooman[(int)(Math.random()*16)+11];
   for (int i = 0; i < human.length; i++) {
