@@ -1,15 +1,17 @@
 Hooman[] zombie;
 Hooman[] human;
+int canvaSize;
 void setup() {
-  size(500, 500);
+  size(800, 800);
+  canvaSize = width;
   //spawns the zombies and humans in; zombies with a greenish color and humans with a white color
-  zombie = new Hooman[(int)(Math.random()*5)+1];
+  zombie = new Hooman[(int)(Math.random()*10)+1];
   for (int i = 0; i < zombie.length; i++) {
-    zombie[i] = new Hooman(250,250,color(149, 167, 146),true);
+    zombie[i] = new Hooman(canvaSize/2,canvaSize/2,color(149, 167, 146),true);
   }
-  human = new Hooman[(int)(Math.random()*16)+11];
+  human = new Hooman[(int)(Math.random()*32)+22];
   for (int i = 0; i < human.length; i++) {
-    human[i] = new Hooman((int)(Math.random()*501),(int)(Math.random()*501),color(255),false);
+    human[i] = new Hooman((int)(Math.random()*(canvaSize + 1)),(int)(Math.random()*(canvaSize + 1)),color(255),false);
   }
 }
 void draw() {
@@ -62,12 +64,16 @@ class Hooman {
     myInfected = true;
   }
   void walk() { 
-    if(myX > 25 && myX < 475 && myY > 25 && myY < 475){
+      if(myX > 25 && myX < canvaSize - 25 && myY > 25 && myY < canvaSize - 25){
      //if infected then x2 speed
      if(myInfected == true){
        myX = myX + (int)(Math.random()*13)-6;
        myY = myY + (int)(Math.random()*13)-6;
+       myX = myX + (int)(Math.random()*13)-6;
+       myY = myY + (int)(Math.random()*13)-6;
      }else{
+       myX = myX + (int)(Math.random()*7)-3;
+       myY = myY + (int)(Math.random()*7)-3;
        myX = myX + (int)(Math.random()*7)-3;
        myY = myY + (int)(Math.random()*7)-3;
      }
@@ -79,10 +85,10 @@ class Hooman {
       if(myY <= 25){
         myY = myY + (int)(Math.random()*15);
       }
-      if(myX >= 475){
+      if(myX >= canvaSize - 25){
         myX = myX + (int)(Math.random()*15)-15;
       }
-      if(myY >= 475){
+      if(myY >= canvaSize - 25){
         myY = myY + (int)(Math.random()*15)-15;
       }
     }
@@ -90,12 +96,12 @@ class Hooman {
 }
 void mouseClicked() {
   //resets
-  zombie = new Hooman[(int)(Math.random()*5)+1];
+  zombie = new Hooman[(int)(Math.random()*10)+1];
   for (int i = 0; i < zombie.length; i++) {
-    zombie[i] = new Hooman(250,250,color(149, 167, 146),true);
+    zombie[i] = new Hooman(canvaSize/2,canvaSize/2,color(149, 167, 146),true);
   }
-  human = new Hooman[(int)(Math.random()*16)+11];
+  human = new Hooman[(int)(Math.random()*32)+22];
   for (int i = 0; i < human.length; i++) {
-    human[i] = new Hooman((int)(Math.random()*501),(int)(Math.random()*501),color(255),false);
+    human[i] = new Hooman((int)(Math.random()*(canvaSize + 1)),(int)(Math.random()*(canvaSize + 1)),color(255),false);
   }
 }
