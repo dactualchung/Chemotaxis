@@ -58,7 +58,7 @@ class Hooman {
   }
   //infects the human
   void infect() {
-    myColor = color(167, 169, 136);
+    myColor = color(149, 167, 146);
     myInfected = true;
   }
   void walk() { 
